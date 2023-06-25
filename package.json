@@ -1,9 +1,11 @@
 {
-  "name": "with-docker",
+  "name": "crafty-circuit",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:docker": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build",
+    "serve:docker": "docker-compose -f docker-compose.yml up -d",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
